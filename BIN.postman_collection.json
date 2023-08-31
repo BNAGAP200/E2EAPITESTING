@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "bb26f228-6d44-4ebf-8a0d-07d4edb51caf",
+		"name": "BIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27367191",
+		"_collection_link": "https://grey-escape-584086.postman.co/workspace/Team-Workspace~8c9497ab-fbaf-46a0-8665-e7ef9cfc509c/collection/27367191-bb26f228-6d44-4ebf-8a0d-07d4edb51caf?action=share&source=collection_link&creator=27367191"
+	},
+	"item": [
+		{
+			"name": "HTTPS",
+			"item": [
+				{
+					"name": "RetriveMethod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}get",
+							"host": [
+								"{{Base_url}}get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatingMethod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}post",
+							"host": [
+								"{{Base_url}}post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SlightModification",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/put",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"put"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}patch",
+							"host": [
+								"{{Base_url}}patch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Basic Auth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}basic-auth/user/user",
+							"host": [
+								"{{Base_url}}basic-auth"
+							],
+							"path": [
+								"user",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bearer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "bf8c342e-7a2f-482f-bb66-a967ec25b225",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}bearer\n",
+							"host": [
+								"{{Base_url}}bearer\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Digest",
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": [
+								{
+									"key": "password",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "MD5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}digest-auth/undefined/user/user",
+							"host": [
+								"{{Base_url}}digest-auth"
+							],
+							"path": [
+								"undefined",
+								"user",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "apikey"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "algorithm",
+								"value": "MD5",
+								"description": "MD5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base_url}}/digest-auth/undefined/user/user/MD5",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"digest-auth",
+								"undefined",
+								"user",
+								"user",
+								"MD5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HIDDEN",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "USER",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "USER",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}hidden-basic-auth/USER/USER",
+							"host": [
+								"{{Base_url}}hidden-basic-auth"
+							],
+							"path": [
+								"USER",
+								"USER"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STATUS CODE",
+			"item": [
+				{
+					"name": "200",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Code",
+								"value": "300",
+								"description": "300",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base_url}}status/200?Status_code=300&Status_code=500",
+							"host": [
+								"{{Base_url}}status"
+							],
+							"path": [
+								"200"
+							],
+							"query": [
+								{
+									"key": "Status_code",
+									"value": "300"
+								},
+								{
+									"key": "Status_code",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}status/200",
+							"host": [
+								"{{Base_url}}status"
+							],
+							"path": [
+								"200"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INSPECTION",
+			"item": [
+				{
+					"name": "NO PARMS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}headers",
+							"host": [
+								"{{Base_url}}headers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IP ADDRS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}ip",
+							"host": [
+								"{{Base_url}}ip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}user-agent",
+							"host": [
+								"{{Base_url}}user-agent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "REQUEST",
+			"item": [
+				{
+					"name": "CACHE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/cache/1",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"cache",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FREEFORM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}response-headers?freeform=",
+							"host": [
+								"{{Base_url}}response-headers"
+							],
+							"query": [
+								{
+									"key": "freeform",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FREEFORM USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}response-headers?freeform=USER",
+							"host": [
+								"{{Base_url}}response-headers"
+							],
+							"query": [
+								{
+									"key": "freeform",
+									"value": "USER"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COOKIES",
+			"item": [
+				{
+					"name": "RETURN DATA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}cookies",
+							"host": [
+								"{{Base_url}}cookies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}cookies/delete?freeform=USER",
+							"host": [
+								"{{Base_url}}cookies"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "freeform",
+									"value": "USER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}cookies/set?freeform=USER",
+							"host": [
+								"{{Base_url}}cookies"
+							],
+							"path": [
+								"set"
+							],
+							"query": [
+								{
+									"key": "freeform",
+									"value": "USER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}cookies/set/USER/USER",
+							"host": [
+								"{{Base_url}}cookies"
+							],
+							"path": [
+								"set",
+								"USER",
+								"USER"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IMAGE",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}image",
+							"host": [
+								"{{Base_url}}image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JPEG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}image/jpeg",
+							"host": [
+								"{{Base_url}}image"
+							],
+							"path": [
+								"jpeg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PNG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}image/png",
+							"host": [
+								"{{Base_url}}image"
+							],
+							"path": [
+								"png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SVG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}image/svg",
+							"host": [
+								"{{Base_url}}image"
+							],
+							"path": [
+								"svg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DYNAMIC",
+			"item": [
+				{
+					"name": "ENCODED STRING",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}base64/SFRUUEJJTiBpcyBhd2Vzb21l",
+							"host": [
+								"{{Base_url}}base64"
+							],
+							"path": [
+								"SFRUUEJJTiBpcyBhd2Vzb21l"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BYTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}bytes/1",
+							"host": [
+								"{{Base_url}}bytes"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELAY PROCESS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}delay/12",
+							"host": [
+								"{{Base_url}}delay"
+							],
+							"path": [
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DRIP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}drip?duration=2&numbytes=10&code=200&delay=2",
+							"host": [
+								"{{Base_url}}drip"
+							],
+							"query": [
+								{
+									"key": "duration",
+									"value": "2"
+								},
+								{
+									"key": "numbytes",
+									"value": "10"
+								},
+								{
+									"key": "code",
+									"value": "200"
+								},
+								{
+									"key": "delay",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
